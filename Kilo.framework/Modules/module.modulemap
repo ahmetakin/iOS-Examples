@@ -1,0 +1,4 @@
+framework module Kilo {
+  header "Kilo-Swift.h"
+  requires objc
+}
