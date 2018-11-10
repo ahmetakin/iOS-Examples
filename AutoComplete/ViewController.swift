@@ -13,14 +13,69 @@
 //
 
 import UIKit
+import Lima
 
-class ViewController: UIViewController {
-    // TODO
+class ViewController: UIViewController, UITextFieldDelegate {
+    var textField: UITextField!
+
+    let suggestions = [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple"
+    ]
+
+    override func loadView() {
+        view = LMColumnView(margin:16,
+            UILabel(text: "What is your favorite color?"),
+            UITextField(borderStyle: .roundedRect,
+                autocorrectionType: .no,
+                autocapitalizationType: .none) { self.textField = $0 },
+            LMSpacer()
+        )
+
+        textField.delegate = self
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Auto-Complete"
+
+        edgesForExtendedLayout = UIRectEdge()
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return !autoCompleteText(in: textField, using: string, suggestions: suggestions)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        return true
+    }
+
+    func autoCompleteText(in textField: UITextField, using string: String, suggestions: [String]) -> Bool {
+        if !string.isEmpty,
+            let selectedTextRange = textField.selectedTextRange, selectedTextRange.end == textField.endOfDocument,
+            let prefixRange = textField.textRange(from: textField.beginningOfDocument, to: selectedTextRange.start),
+            let text = textField.text(in: prefixRange) {
+            let prefix = text + string
+            let matches = suggestions.filter { $0.hasPrefix(prefix) }
+
+            if (matches.count > 0) {
+                textField.text = matches[0]
+
+                if let start = textField.position(from: textField.beginningOfDocument, offset: prefix.count) {
+                    textField.selectedTextRange = textField.textRange(from: start, to: textField.endOfDocument)
+
+                    return true
+                }
+            }
+        }
+
+        return false
     }
 }
-
