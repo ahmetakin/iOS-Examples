@@ -13,13 +13,26 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
-    // TODO
+    var webView: WKWebView!
+
+    override func loadView() {
+        webView = WKWebView()
+
+        view = webView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Client-Side CSS"
+
+        if let url = Bundle.main.url(forResource: "example", withExtension: "html"),
+            let data = try? Data(contentsOf: url),
+            let resourceURL = Bundle.main.resourceURL {
+            webView.load(data, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: resourceURL)
+        }
     }
 }

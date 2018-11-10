@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3710F1F221978CE5009629BB /* example.html in Resources */ = {isa = PBXBuildFile; fileRef = 3710F1F121978CE5009629BB /* example.html */; };
+		3710F1F421978DC5009629BB /* example.css in Resources */ = {isa = PBXBuildFile; fileRef = 3710F1F321978DC5009629BB /* example.css */; };
 		37684E022197377300DA446C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37684E012197377300DA446C /* AppDelegate.swift */; };
 		37684E042197377300DA446C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37684E032197377300DA446C /* ViewController.swift */; };
 		37684E092197377400DA446C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37684E082197377400DA446C /* Assets.xcassets */; };
@@ -62,6 +64,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3710F1F121978CE5009629BB /* example.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = example.html; sourceTree = "<group>"; };
+		3710F1F321978DC5009629BB /* example.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = example.css; sourceTree = "<group>"; };
 		37684DF82197371E00DA446C /* Kilo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Kilo.framework; sourceTree = "<group>"; };
 		37684DF92197372700DA446C /* Lima.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Lima.framework; sourceTree = "<group>"; };
 		37684DFF2197377300DA446C /* ActivityIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +187,8 @@
 				377AAA97219775AD0063667B /* Assets.xcassets */,
 				377AAA99219775AD0063667B /* LaunchScreen.storyboard */,
 				377AAA9C219775AD0063667B /* Info.plist */,
+				3710F1F121978CE5009629BB /* example.html */,
+				3710F1F321978DC5009629BB /* example.css */,
 			);
 			path = ClientSideCSS;
 			sourceTree = "<group>";
@@ -387,6 +393,8 @@
 			files = (
 				377AAA9B219775AD0063667B /* LaunchScreen.storyboard in Resources */,
 				377AAA98219775AD0063667B /* Assets.xcassets in Resources */,
+				3710F1F421978DC5009629BB /* example.css in Resources */,
+				3710F1F221978CE5009629BB /* example.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
