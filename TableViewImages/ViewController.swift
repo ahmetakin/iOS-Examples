@@ -13,6 +13,7 @@
 //
 
 import UIKit
+import Lima
 import Kilo
 
 class ViewController: UITableViewController {
@@ -25,7 +26,9 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Photos"
+        title = "Table View Images"
+
+        tableView.register(PhotoCell.self, forCellReuseIdentifier: PhotoCell.description())
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,19 +58,16 @@ class ViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "cell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) ?? UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoCell.description(), for: indexPath) as! PhotoCell
 
         guard let photo = photos?[indexPath.row] else {
             fatalError()
         }
 
-        cell.textLabel?.text = photo.title
-
         // Attempt to load image from cache
-        cell.imageView?.image = thumbnailImages[photo.id]
+        cell.thumbnailImageView.image = thumbnailImages[photo.id]
 
-        if cell.imageView?.image == nil,
+        if cell.thumbnailImageView.image == nil,
             let url = photo.thumbnailUrl,
             let scheme = url.scheme,
             let host = url.host,
@@ -79,16 +79,18 @@ class ViewController: UITableViewController {
             }) { (result: UIImage?, error: Error?) in
                 // If cell is still visible, update image and reload row
                 if error == nil,
-                    let cell = tableView.cellForRow(at: indexPath),
+                    let cell = tableView.cellForRow(at: indexPath) as? PhotoCell,
                     let thumbnailImage = result {
                     self.thumbnailImages[photo.id] = thumbnailImage
 
-                    cell.imageView?.image = thumbnailImage
+                    cell.thumbnailImageView.image = thumbnailImage
 
                     tableView.reloadRows(at: [indexPath], with: .none)
                 }
             }
         }
+
+        cell.titleLabel.text = photo.title
 
         return cell
     }
@@ -100,4 +102,26 @@ struct Photo: Decodable {
     let title: String?
     var url: URL?
     var thumbnailUrl: URL?
+}
+
+class PhotoCell: LMTableViewCell {
+    var thumbnailImageView: UIImageView!
+    var titleLabel: UILabel!
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        setContent(LMRowView(
+            UIImageView(contentMode: .scaleAspectFit, width: 50, height: 50) { self.thumbnailImageView = $0 },
+            LMSpacer(width: 0.5, backgroundColor: UIColor.lightGray),
+            LMColumnView(spacing: 0,
+                UILabel(font: UIFont.preferredFont(forTextStyle: .body), numberOfLines: 2) { self.titleLabel = $0 },
+                LMSpacer()
+            )
+        ), ignoreMargins: false)
+    }
+
+    required init?(coder decoder: NSCoder) {
+        return nil
+    }
 }
