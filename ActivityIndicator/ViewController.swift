@@ -14,13 +14,61 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    // TODO
-    
+class ViewController: UITableViewController {
+    var rows: [String]? = nil
+
+    let dispatchQueue = DispatchQueue(label: "Example Queue")
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Activity Indicator"
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if (rows == nil) {
+            let activityIndicatorView = UIActivityIndicatorView(style: .gray)
+
+            activityIndicatorView.startAnimating()
+
+            tableView.backgroundView = activityIndicatorView
+            tableView.separatorStyle = .none
+
+            dispatchQueue.async {
+                Thread.sleep(forTimeInterval: 3)
+
+                OperationQueue.main.addOperation() {
+                    activityIndicatorView.stopAnimating()
+
+                    self.rows = ["One", "Two", "Three", "Four", "Five"]
+
+                    self.tableView.backgroundView = nil
+                    self.tableView.separatorStyle = .singleLine
+
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return (rows == nil) ? 0 : 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rows?.count ?? 0
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "cell"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) ?? UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+
+        cell.textLabel?.text = rows?[indexPath.row]
+
+        return cell
     }
 }
 

@@ -11,21 +11,25 @@
 		37684E042197377300DA446C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37684E032197377300DA446C /* ViewController.swift */; };
 		37684E092197377400DA446C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37684E082197377400DA446C /* Assets.xcassets */; };
 		37684E0C2197377400DA446C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37684E0A2197377400DA446C /* LaunchScreen.storyboard */; };
-		37E89A4D2197385100340267 /* Lima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; };
-		37E89A4E2197385100340267 /* Lima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		37E89A4F2197385100340267 /* Kilo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF82197371E00DA446C /* Kilo.framework */; };
-		37E89A502197385100340267 /* Kilo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF82197371E00DA446C /* Kilo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37E9BE8F2197448400BEE762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9BE8E2197448400BEE762 /* AppDelegate.swift */; };
+		37E9BE912197448400BEE762 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9BE902197448400BEE762 /* ViewController.swift */; };
+		37E9BE962197448400BEE762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E9BE952197448400BEE762 /* Assets.xcassets */; };
+		37E9BE992197448400BEE762 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E9BE972197448400BEE762 /* LaunchScreen.storyboard */; };
+		37E9BE9E2197451400BEE762 /* Lima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; };
+		37E9BE9F2197451400BEE762 /* Lima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37E9BEA02197451500BEE762 /* Kilo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF82197371E00DA446C /* Kilo.framework */; };
+		37E9BEA12197451500BEE762 /* Kilo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF82197371E00DA446C /* Kilo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		37E89A512197385100340267 /* Embed Frameworks */ = {
+		37E9BEA22197451500BEE762 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				37E89A4E2197385100340267 /* Lima.framework in Embed Frameworks */,
-				37E89A502197385100340267 /* Kilo.framework in Embed Frameworks */,
+				37E9BE9F2197451400BEE762 /* Lima.framework in Embed Frameworks */,
+				37E9BEA12197451500BEE762 /* Kilo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +45,12 @@
 		37684E082197377400DA446C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37684E0B2197377400DA446C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37684E0D2197377400DA446C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37E9BE8C2197448400BEE762 /* AutoComplete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoComplete.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37E9BE8E2197448400BEE762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37E9BE902197448400BEE762 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37E9BE952197448400BEE762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37E9BE982197448400BEE762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		37E9BE9A2197448400BEE762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +58,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37E89A4D2197385100340267 /* Lima.framework in Frameworks */,
-				37E89A4F2197385100340267 /* Kilo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37E9BE892197448400BEE762 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E9BE9E2197451400BEE762 /* Lima.framework in Frameworks */,
+				37E9BEA02197451500BEE762 /* Kilo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				37684E002197377300DA446C /* ActivityIndicator */,
+				37E9BE8D2197448400BEE762 /* AutoComplete */,
 				370873B421972F4B00A025D2 /* Products */,
 				37E89A4C2197382D00340267 /* Frameworks */,
 			);
@@ -69,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				37684DFF2197377300DA446C /* ActivityIndicator.app */,
+				37E9BE8C2197448400BEE762 /* AutoComplete.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +113,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		37E9BE8D2197448400BEE762 /* AutoComplete */ = {
+			isa = PBXGroup;
+			children = (
+				37E9BE8E2197448400BEE762 /* AppDelegate.swift */,
+				37E9BE902197448400BEE762 /* ViewController.swift */,
+				37E9BE952197448400BEE762 /* Assets.xcassets */,
+				37E9BE972197448400BEE762 /* LaunchScreen.storyboard */,
+				37E9BE9A2197448400BEE762 /* Info.plist */,
+			);
+			path = AutoComplete;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,7 +135,6 @@
 				37684DFB2197377300DA446C /* Sources */,
 				37684DFC2197377300DA446C /* Frameworks */,
 				37684DFD2197377300DA446C /* Resources */,
-				37E89A512197385100340267 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -113,6 +143,24 @@
 			name = ActivityIndicator;
 			productName = ActivityIndicator;
 			productReference = 37684DFF2197377300DA446C /* ActivityIndicator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		37E9BE8B2197448400BEE762 /* AutoComplete */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37E9BE9B2197448400BEE762 /* Build configuration list for PBXNativeTarget "AutoComplete" */;
+			buildPhases = (
+				37E9BE882197448400BEE762 /* Sources */,
+				37E9BE892197448400BEE762 /* Frameworks */,
+				37E9BE8A2197448400BEE762 /* Resources */,
+				37E9BEA22197451500BEE762 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoComplete;
+			productName = AutoComplete;
+			productReference = 37E9BE8C2197448400BEE762 /* AutoComplete.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,6 +174,9 @@
 				ORGANIZATIONNAME = "Greg Brown";
 				TargetAttributes = {
 					37684DFE2197377300DA446C = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					37E9BE8B2197448400BEE762 = {
 						CreatedOnToolsVersion = 10.0;
 					};
 				};
@@ -144,6 +195,7 @@
 			projectRoot = "";
 			targets = (
 				37684DFE2197377300DA446C /* ActivityIndicator */,
+				37E9BE8B2197448400BEE762 /* AutoComplete */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +207,15 @@
 			files = (
 				37684E0C2197377400DA446C /* LaunchScreen.storyboard in Resources */,
 				37684E092197377400DA446C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37E9BE8A2197448400BEE762 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E9BE992197448400BEE762 /* LaunchScreen.storyboard in Resources */,
+				37E9BE962197448400BEE762 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +231,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37E9BE882197448400BEE762 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E9BE912197448400BEE762 /* ViewController.swift in Sources */,
+				37E9BE8F2197448400BEE762 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -177,6 +247,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				37684E0B2197377400DA446C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		37E9BE972197448400BEE762 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37E9BE982197448400BEE762 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -303,6 +381,7 @@
 		37684E0F2197377400DA446C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FBUU23VBFN;
@@ -326,6 +405,7 @@
 		37684E102197377400DA446C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FBUU23VBFN;
@@ -340,6 +420,50 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.ActivityIndicator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		37E9BE9C2197448400BEE762 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FBUU23VBFN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = AutoComplete/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.AutoComplete;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37E9BE9D2197448400BEE762 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FBUU23VBFN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = AutoComplete/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.AutoComplete;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,6 +487,15 @@
 			buildConfigurations = (
 				37684E0F2197377400DA446C /* Debug */,
 				37684E102197377400DA446C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37E9BE9B2197448400BEE762 /* Build configuration list for PBXNativeTarget "AutoComplete" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37E9BE9C2197448400BEE762 /* Debug */,
+				37E9BE9D2197448400BEE762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
