@@ -156,13 +156,15 @@ class UserCell: LMTableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         setContent(LMColumnView(spacing: 8,
-            LMRowView(
-                UILabel(font: UIFont.preferredFont(forTextStyle: .headline)) { self.nameLabel = $0 },
-                UILabel() { self.usernameLabel = $0 },
-                LMSpacer()
-            ),
+            LMColumnView(spacing: 2,
+                LMRowView(
+                    UILabel(font: UIFont.preferredFont(forTextStyle: .headline)) { self.nameLabel = $0 },
+                    UILabel() { self.usernameLabel = $0 },
+                    LMSpacer()
+                ),
 
-            UILabel(font: UIFont.preferredFont(forTextStyle: .subheadline), weight: 1) { self.emailLabel = $0 },
+                UILabel(font: UIFont.preferredFont(forTextStyle: .subheadline), weight: 1) { self.emailLabel = $0 }
+            ),
 
             LMSpacer(height: 0.5, backgroundColor: UIColor.lightGray),
 

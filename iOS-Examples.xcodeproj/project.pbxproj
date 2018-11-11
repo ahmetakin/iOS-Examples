@@ -29,8 +29,6 @@
 		3787B6B9219852D600CD4221 /* Lima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3787B6BA219852D600CD4221 /* Kilo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF82197371E00DA446C /* Kilo.framework */; };
 		3787B6BB219852D600CD4221 /* Kilo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF82197371E00DA446C /* Kilo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3787B6BD219852FF00CD4221 /* Lima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; };
-		3787B6BE219852FF00CD4221 /* Lima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37D90DE5219756FD00F03292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D90DE4219756FD00F03292 /* AppDelegate.swift */; };
 		37D90DE7219756FD00F03292 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D90DE6219756FD00F03292 /* ViewController.swift */; };
 		37D90DEC219756FD00F03292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D90DEB219756FD00F03292 /* Assets.xcassets */; };
@@ -56,17 +54,6 @@
 			files = (
 				3787B6B9219852D600CD4221 /* Lima.framework in Embed Frameworks */,
 				3787B6BB219852D600CD4221 /* Kilo.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3787B6BF219852FF00CD4221 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3787B6BE219852FF00CD4221 /* Lima.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,7 +154,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3787B6BD219852FF00CD4221 /* Lima.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +349,6 @@
 				3787B6A22198503A00CD4221 /* Sources */,
 				3787B6A32198503A00CD4221 /* Frameworks */,
 				3787B6A42198503A00CD4221 /* Resources */,
-				3787B6BF219852FF00CD4221 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
