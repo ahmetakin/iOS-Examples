@@ -21,6 +21,16 @@
 		377AAAA9219775ED0063667B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377AAAA8219775ED0063667B /* ViewController.swift */; };
 		377AAAAE219775ED0063667B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 377AAAAD219775ED0063667B /* Assets.xcassets */; };
 		377AAAB1219775ED0063667B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377AAAAF219775ED0063667B /* LaunchScreen.storyboard */; };
+		3787B6A92198503A00CD4221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3787B6A82198503A00CD4221 /* AppDelegate.swift */; };
+		3787B6AB2198503A00CD4221 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3787B6AA2198503A00CD4221 /* ViewController.swift */; };
+		3787B6B02198503B00CD4221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3787B6AF2198503B00CD4221 /* Assets.xcassets */; };
+		3787B6B32198503B00CD4221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3787B6B12198503B00CD4221 /* LaunchScreen.storyboard */; };
+		3787B6B8219852D600CD4221 /* Lima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; };
+		3787B6B9219852D600CD4221 /* Lima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3787B6BA219852D600CD4221 /* Kilo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF82197371E00DA446C /* Kilo.framework */; };
+		3787B6BB219852D600CD4221 /* Kilo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF82197371E00DA446C /* Kilo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3787B6BD219852FF00CD4221 /* Lima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; };
+		3787B6BE219852FF00CD4221 /* Lima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37684DF92197372700DA446C /* Lima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37D90DE5219756FD00F03292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D90DE4219756FD00F03292 /* AppDelegate.swift */; };
 		37D90DE7219756FD00F03292 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D90DE6219756FD00F03292 /* ViewController.swift */; };
 		37D90DEC219756FD00F03292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D90DEB219756FD00F03292 /* Assets.xcassets */; };
@@ -38,6 +48,29 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		3787B6BC219852D600CD4221 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3787B6B9219852D600CD4221 /* Lima.framework in Embed Frameworks */,
+				3787B6BB219852D600CD4221 /* Kilo.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3787B6BF219852FF00CD4221 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3787B6BE219852FF00CD4221 /* Lima.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37D90DF82197573000F03292 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,6 +119,12 @@
 		377AAAAD219775ED0063667B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		377AAAB0219775ED0063667B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		377AAAB2219775ED0063667B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3787B6A62198503A00CD4221 /* BarcodeScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3787B6A82198503A00CD4221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3787B6AA2198503A00CD4221 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3787B6AF2198503B00CD4221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3787B6B22198503B00CD4221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3787B6B42198503B00CD4221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37D90DE2219756FC00F03292 /* TableViewImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D90DE4219756FD00F03292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37D90DE6219756FD00F03292 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +158,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3787B6B8219852D600CD4221 /* Lima.framework in Frameworks */,
+				3787B6BA219852D600CD4221 /* Kilo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3787B6A32198503A00CD4221 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3787B6BD219852FF00CD4221 /* Lima.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +199,7 @@
 				37D90DE3219756FD00F03292 /* TableViewImages */,
 				377AAA8F219775AC0063667B /* ClientSideCSS */,
 				377AAAA5219775ED0063667B /* ResponseDataCache */,
+				3787B6A72198503A00CD4221 /* BarcodeScanner */,
 				370873B421972F4B00A025D2 /* Products */,
 				37E89A4C2197382D00340267 /* Frameworks */,
 			);
@@ -163,6 +213,7 @@
 				37D90DE2219756FC00F03292 /* TableViewImages.app */,
 				377AAA8E219775AC0063667B /* ClientSideCSS.app */,
 				377AAAA4219775EC0063667B /* ResponseDataCache.app */,
+				3787B6A62198503A00CD4221 /* BarcodeScanner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,6 +254,18 @@
 				377AAAB2219775ED0063667B /* Info.plist */,
 			);
 			path = ResponseDataCache;
+			sourceTree = "<group>";
+		};
+		3787B6A72198503A00CD4221 /* BarcodeScanner */ = {
+			isa = PBXGroup;
+			children = (
+				3787B6A82198503A00CD4221 /* AppDelegate.swift */,
+				3787B6AA2198503A00CD4221 /* ViewController.swift */,
+				3787B6AF2198503B00CD4221 /* Assets.xcassets */,
+				3787B6B12198503B00CD4221 /* LaunchScreen.storyboard */,
+				3787B6B42198503B00CD4221 /* Info.plist */,
+			);
+			path = BarcodeScanner;
 			sourceTree = "<group>";
 		};
 		37D90DE3219756FD00F03292 /* TableViewImages */ = {
@@ -282,6 +345,7 @@
 				377AAAA0219775EC0063667B /* Sources */,
 				377AAAA1219775EC0063667B /* Frameworks */,
 				377AAAA2219775EC0063667B /* Resources */,
+				3787B6BC219852D600CD4221 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,6 +354,24 @@
 			name = ResponseDataCache;
 			productName = ResponseDataCache;
 			productReference = 377AAAA4219775EC0063667B /* ResponseDataCache.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3787B6A52198503A00CD4221 /* BarcodeScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3787B6B72198503B00CD4221 /* Build configuration list for PBXNativeTarget "BarcodeScanner" */;
+			buildPhases = (
+				3787B6A22198503A00CD4221 /* Sources */,
+				3787B6A32198503A00CD4221 /* Frameworks */,
+				3787B6A42198503A00CD4221 /* Resources */,
+				3787B6BF219852FF00CD4221 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BarcodeScanner;
+			productName = BarcodeScanner;
+			productReference = 3787B6A62198503A00CD4221 /* BarcodeScanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 		37D90DE1219756FC00F03292 /* TableViewImages */ = {
@@ -347,6 +429,9 @@
 					377AAAA3219775EC0063667B = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					3787B6A52198503A00CD4221 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					37D90DE1219756FC00F03292 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -373,6 +458,7 @@
 				37D90DE1219756FC00F03292 /* TableViewImages */,
 				377AAA8D219775AC0063667B /* ClientSideCSS */,
 				377AAAA3219775EC0063667B /* ResponseDataCache */,
+				3787B6A52198503A00CD4221 /* BarcodeScanner */,
 			);
 		};
 /* End PBXProject section */
@@ -404,6 +490,15 @@
 			files = (
 				377AAAB1219775ED0063667B /* LaunchScreen.storyboard in Resources */,
 				377AAAAE219775ED0063667B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3787B6A42198503A00CD4221 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3787B6B32198503B00CD4221 /* LaunchScreen.storyboard in Resources */,
+				3787B6B02198503B00CD4221 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +550,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3787B6A22198503A00CD4221 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3787B6AB2198503A00CD4221 /* ViewController.swift in Sources */,
+				3787B6A92198503A00CD4221 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37D90DDE219756FC00F03292 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -496,6 +600,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				377AAAB0219775ED0063667B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3787B6B12198503B00CD4221 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3787B6B22198503B00CD4221 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -727,6 +839,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FBUU23VBFN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ResponseDataCache/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -746,6 +862,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FBUU23VBFN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ResponseDataCache/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -753,6 +873,52 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.ResponseDataCache;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3787B6B52198503B00CD4221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FBUU23VBFN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = BarcodeScanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.BarcodeScanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3787B6B62198503B00CD4221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FBUU23VBFN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = BarcodeScanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.BarcodeScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -886,6 +1052,15 @@
 			buildConfigurations = (
 				377AAAB4219775ED0063667B /* Debug */,
 				377AAAB5219775ED0063667B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3787B6B72198503B00CD4221 /* Build configuration list for PBXNativeTarget "BarcodeScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3787B6B52198503B00CD4221 /* Debug */,
+				3787B6B62198503B00CD4221 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -28,6 +28,7 @@ class ViewController: UITableViewController {
 
         title = "Table View Images"
 
+        tableView.estimatedRowHeight = 2
         tableView.register(PhotoCell.self, forCellReuseIdentifier: PhotoCell.description())
     }
 
@@ -58,16 +59,16 @@ class ViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoCell.description(), for: indexPath) as! PhotoCell
+        let photoCell = tableView.dequeueReusableCell(withIdentifier: PhotoCell.description(), for: indexPath) as! PhotoCell
 
         guard let photo = photos?[indexPath.row] else {
             fatalError()
         }
 
         // Attempt to load image from cache
-        cell.thumbnailImageView.image = thumbnailImages[photo.id]
+        photoCell.thumbnailImageView.image = thumbnailImages[photo.id]
 
-        if cell.thumbnailImageView.image == nil,
+        if photoCell.thumbnailImageView.image == nil,
             let url = photo.thumbnailUrl,
             let scheme = url.scheme,
             let host = url.host,
@@ -90,9 +91,9 @@ class ViewController: UITableViewController {
             }
         }
 
-        cell.titleLabel.text = photo.title
+        photoCell.titleLabel.text = photo.title
 
-        return cell
+        return photoCell
     }
 }
 
