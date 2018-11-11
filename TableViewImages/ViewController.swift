@@ -78,15 +78,13 @@ class ViewController: UITableViewController {
             serviceProxy.invoke(.get, path: url.path, responseHandler: { content, contentType in
                 return UIImage(data: content)
             }) { (result: UIImage?, error: Error?) in
-                // If cell is still visible, update image and reload row
-                if error == nil,
-                    let cell = tableView.cellForRow(at: indexPath) as? PhotoCell,
-                    let thumbnailImage = result {
+                // Add image to cache and update cell, if visible
+                if let thumbnailImage = result {
                     self.thumbnailImages[photo.id] = thumbnailImage
 
-                    cell.thumbnailImageView.image = thumbnailImage
-
-                    tableView.reloadRows(at: [indexPath], with: .none)
+                    if let cell = tableView.cellForRow(at: indexPath) as? PhotoCell {
+                        cell.thumbnailImageView.image = thumbnailImage
+                    }
                 }
             }
         }

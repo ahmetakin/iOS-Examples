@@ -15,7 +15,7 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var rows: [String]? = nil
+    var rows: [String]?
 
     let dispatchQueue = DispatchQueue(label: "Example Queue")
 

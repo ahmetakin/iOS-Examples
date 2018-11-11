@@ -17,6 +17,9 @@ import Lima
 import Kilo
 
 class ViewController: UITableViewController {
+    var userCacheURL: URL?
+    let userCacheQueue = OperationQueue()
+
     var users: [User]?
 
     override func viewDidLoad() {
@@ -26,6 +29,10 @@ class ViewController: UITableViewController {
 
         tableView.estimatedRowHeight = 2
         tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.description())
+
+        if let cacheURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first {
+            userCacheURL = cacheURL.appendingPathComponent("users.json")
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -36,9 +43,38 @@ class ViewController: UITableViewController {
             let serviceProxy = WebServiceProxy(session: URLSession.shared, serverURL: URL(string: "https://jsonplaceholder.typicode.com")!)
 
             serviceProxy.invoke(.get, path: "/users") { (result: [User]?, error: Error?) in
-                self.users = result ?? []
+                if (error == nil) {
+                    self.users = result ?? []
 
-                self.tableView.reloadData()
+                    self.tableView.reloadData()
+
+                    // Write the response to the cache
+                    if let userCacheURL = self.userCacheURL {
+                        self.userCacheQueue.addOperation() {
+                            let jsonEncoder = JSONEncoder()
+
+                            if let data = try? jsonEncoder.encode(self.users) {
+                                try? data.write(to: userCacheURL)
+                            }
+                        }
+                    }
+                } else {
+                    // Read the data from the cache
+                    if let userCacheURL = self.userCacheURL {
+                        self.userCacheQueue.addOperation() {
+                            let jsonDecoder = JSONDecoder()
+
+                            if let data = try? Data(contentsOf: userCacheURL) {
+                                self.users = (try? jsonDecoder.decode([User].self, from: data)) ?? []
+
+                                // Update the UI
+                                OperationQueue.main.addOperation() {
+                                    self.tableView.reloadData()
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
