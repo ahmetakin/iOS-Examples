@@ -21,7 +21,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
     // AV capture session and dispatch queue
     let session = AVCaptureSession()
-    let sessionQueue = DispatchQueue(label: AVCaptureSession.self.description(), attributes: [], target: nil)
+    let sessionQueue = DispatchQueue(label: "Session Queue")
 
     var isShowingAlert = false
 
@@ -39,10 +39,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         session.beginConfiguration()
 
         if let videoDevice = AVCaptureDevice.default(for: .video) {
-            if let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice) {
-                if (session.canAddInput(videoDeviceInput)) {
-                    session.addInput(videoDeviceInput)
-                }
+            if let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice),
+                session.canAddInput(videoDeviceInput) {
+                session.addInput(videoDeviceInput)
             }
 
             let metadataOutput = AVCaptureMetadataOutput()
@@ -70,25 +69,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         cameraView.layer.videoGravity = .resizeAspectFill
 
         // Set initial camera orientation
-        let videoOrientation: AVCaptureVideoOrientation
-        switch UIApplication.shared.statusBarOrientation {
-            case .portrait:
-                videoOrientation = .portrait
-
-            case .portraitUpsideDown:
-                videoOrientation = .portraitUpsideDown
-
-            case .landscapeLeft:
-                videoOrientation = .landscapeLeft
-
-            case .landscapeRight:
-                videoOrientation = .landscapeRight
-
-            default:
-                videoOrientation = .portrait
-        }
-
-        cameraView.layer.connection?.videoOrientation = videoOrientation
+        cameraView.updateOrientation()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -113,25 +94,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         super.viewWillTransition(to: size, with: coordinator)
 
         // Update camera orientation
-        let videoOrientation: AVCaptureVideoOrientation
-        switch UIDevice.current.orientation {
-            case .portrait:
-                videoOrientation = .portrait
-
-            case .portraitUpsideDown:
-                videoOrientation = .portraitUpsideDown
-
-            case .landscapeLeft:
-                videoOrientation = .landscapeRight
-
-            case .landscapeRight:
-                videoOrientation = .landscapeLeft
-
-            default:
-                videoOrientation = .portrait
-        }
-
-        cameraView.layer.connection?.videoOrientation = videoOrientation
+        cameraView.updateOrientation()
     }
 
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
@@ -148,7 +111,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 self.isShowingAlert = false
             })
 
-            present(alertController, animated: true, completion: nil)
+            present(alertController, animated: true)
         }
     }
 }
@@ -164,5 +127,27 @@ class CameraView: UIView {
         get {
             return super.layer as! AVCaptureVideoPreviewLayer
         }
+    }
+
+    func updateOrientation() {
+        let videoOrientation: AVCaptureVideoOrientation
+        switch UIDevice.current.orientation {
+        case .portrait:
+            videoOrientation = .portrait
+
+        case .portraitUpsideDown:
+            videoOrientation = .portraitUpsideDown
+
+        case .landscapeLeft:
+            videoOrientation = .landscapeRight
+
+        case .landscapeRight:
+            videoOrientation = .landscapeLeft
+
+        default:
+            videoOrientation = .portrait
+        }
+
+        layer.connection?.videoOrientation = videoOrientation
     }
 }
