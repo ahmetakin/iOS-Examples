@@ -15,9 +15,19 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    var activityIndicatorView: UIActivityIndicatorView!
+
     var rows: [String]?
 
     let dispatchQueue = DispatchQueue(label: "Example Queue")
+
+    override func loadView() {
+        super.loadView()
+
+        activityIndicatorView = UIActivityIndicatorView(style: .gray)
+
+        tableView.backgroundView = activityIndicatorView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,24 +39,19 @@ class ViewController: UITableViewController {
         super.viewWillAppear(animated)
 
         if (rows == nil) {
-            let activityIndicatorView = UIActivityIndicatorView(style: .gray)
-
             activityIndicatorView.startAnimating()
 
-            tableView.backgroundView = activityIndicatorView
             tableView.separatorStyle = .none
 
             dispatchQueue.async {
                 Thread.sleep(forTimeInterval: 3)
 
                 OperationQueue.main.addOperation() {
-                    activityIndicatorView.stopAnimating()
-
                     self.rows = ["One", "Two", "Three", "Four", "Five"]
 
-                    self.tableView.backgroundView = nil
-                    self.tableView.separatorStyle = .singleLine
+                    self.activityIndicatorView.stopAnimating()
 
+                    self.tableView.separatorStyle = .singleLine
                     self.tableView.reloadData()
                 }
             }
