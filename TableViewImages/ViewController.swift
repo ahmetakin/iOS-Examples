@@ -73,6 +73,7 @@ class ViewController: UITableViewController {
             let scheme = url.scheme,
             let host = url.host,
             let serverURL = URL(string: String(format: "%@://%@", scheme, host)) {
+            // Request image
             let serviceProxy = WebServiceProxy(session: URLSession.shared, serverURL: serverURL)
 
             serviceProxy.invoke(.get, path: url.path, responseHandler: { content, contentType in
