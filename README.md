@@ -1,4 +1,4 @@
-# iOS-Examples
+# iOS Examples
 A collection of iOS code samples from my [blog](https://gkbrown.org).
 
 If you find these examples useful, please consider visiting my other projects:
