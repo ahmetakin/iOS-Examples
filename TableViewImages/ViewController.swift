@@ -17,10 +17,42 @@ import Lima
 import Kilo
 
 class ViewController: UITableViewController {
-    // Row data
+    // Photo class
+    struct Photo: Decodable {
+        let id: Int
+        let albumId: Int
+        let title: String?
+        var url: URL?
+        var thumbnailUrl: URL?
+    }
+
+    // Photo cell
+    class PhotoCell: LMTableViewCell {
+        var thumbnailImageView: UIImageView!
+        var titleLabel: UILabel!
+
+        override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+            super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+            setContent(LMRowView(
+                UIImageView(contentMode: .scaleAspectFit, width: 50, height: 50) { self.thumbnailImageView = $0 },
+                LMSpacer(width: 0.5, backgroundColor: UIColor.lightGray),
+                LMColumnView(spacing: 0,
+                    UILabel(font: UIFont.preferredFont(forTextStyle: .body), numberOfLines: 2) { self.titleLabel = $0 },
+                    LMSpacer()
+                )
+            ), ignoreMargins: false)
+        }
+
+        required init?(coder decoder: NSCoder) {
+            return nil
+        }
+    }
+
+    // Photo list
     var photos: [Photo]?
 
-    // Image cache
+    // Thumbnail cache
     var thumbnailImages: [Int: UIImage] = [:]
 
     override func viewDidLoad() {
@@ -66,9 +98,11 @@ class ViewController: UITableViewController {
         }
 
         // Attempt to load image from cache
-        photoCell.thumbnailImageView.image = thumbnailImages[photo.id]
+        let thumbnailImage = thumbnailImages[photo.id]
 
-        if photoCell.thumbnailImageView.image == nil,
+        photoCell.thumbnailImageView.image = thumbnailImage
+
+        if thumbnailImage == nil,
             let url = photo.thumbnailUrl,
             let scheme = url.scheme,
             let host = url.host,
@@ -93,35 +127,5 @@ class ViewController: UITableViewController {
         photoCell.titleLabel.text = photo.title
 
         return photoCell
-    }
-}
-
-struct Photo: Decodable {
-    let id: Int
-    let albumId: Int
-    let title: String?
-    var url: URL?
-    var thumbnailUrl: URL?
-}
-
-class PhotoCell: LMTableViewCell {
-    var thumbnailImageView: UIImageView!
-    var titleLabel: UILabel!
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        setContent(LMRowView(
-            UIImageView(contentMode: .scaleAspectFit, width: 50, height: 50) { self.thumbnailImageView = $0 },
-            LMSpacer(width: 0.5, backgroundColor: UIColor.lightGray),
-            LMColumnView(spacing: 0,
-                UILabel(font: UIFont.preferredFont(forTextStyle: .body), numberOfLines: 2) { self.titleLabel = $0 },
-                LMSpacer()
-            )
-        ), ignoreMargins: false)
-    }
-
-    required init?(coder decoder: NSCoder) {
-        return nil
     }
 }

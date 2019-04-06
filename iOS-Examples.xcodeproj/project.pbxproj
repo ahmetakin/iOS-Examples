@@ -407,6 +407,7 @@
 				TargetAttributes = {
 					37684DFE2197377300DA446C = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 					};
 					377AAA8D219775AC0063667B = {
 						CreatedOnToolsVersion = 10.0;
@@ -751,7 +752,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.ActivityIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -775,7 +776,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.ActivityIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -794,7 +795,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.ClientSideCSS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -813,7 +814,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.ClientSideCSS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -836,7 +837,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.ResponseDataCache;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -859,7 +860,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.ResponseDataCache;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -882,7 +883,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.BarcodeScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -905,7 +906,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.BarcodeScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -928,7 +929,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.TableViewImages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -951,7 +952,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.TableViewImages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -974,7 +975,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.AutoComplete;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -997,7 +998,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.AutoComplete;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
