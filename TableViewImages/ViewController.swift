@@ -71,10 +71,16 @@ class ViewController: UITableViewController {
         if (photos == nil) {
             let serviceProxy = WebServiceProxy(session: URLSession.shared, serverURL: URL(string: "https://jsonplaceholder.typicode.com")!)
 
-            serviceProxy.invoke(.get, path: "/photos") { (result: [Photo]?, error: Error?) in
-                self.photos = result ?? []
+            serviceProxy.invoke(.get, path: "/photos") { [weak self] (result: Result<[Photo], Error>) in
+                switch (result) {
+                case .success(let photos):
+                    self?.photos = photos
 
-                self.tableView.reloadData()
+                default:
+                    self?.photos = []
+                }
+
+                self?.tableView.reloadData()
             }
         }
     }
@@ -112,14 +118,18 @@ class ViewController: UITableViewController {
 
             serviceProxy.invoke(.get, path: url.path, responseHandler: { content, contentType in
                 return UIImage(data: content)
-            }) { (result: UIImage?, error: Error?) in
+            }) { [weak self] (result: Result<UIImage?, Error>) in
                 // Add image to cache and update cell, if visible
-                if let thumbnailImage = result {
-                    self.thumbnailImages[photo.id] = thumbnailImage
+                switch (result) {
+                case .success(let thumbnailImage):
+                    self?.thumbnailImages[photo.id] = thumbnailImage
 
                     if let cell = tableView.cellForRow(at: indexPath) as? PhotoCell {
                         cell.thumbnailImageView.image = thumbnailImage
                     }
+
+                default:
+                    break
                 }
             }
         }
